@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DnevniUnosActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:id="@+id/logo"
+            app:srcCompat="@drawable/unos"
+            android:layout_marginBottom="16dp"
+            android:layout_centerHorizontal="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:id="@+id/txtTrenutnaTezina"
+            android:text="Trenutna težina"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/txt_ispis"
+            android:id="@+id/trenutnaTezinaUnos"
+            android:hint="kg"
+            android:textSize="15dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@+id/txtTrenutnaTezina"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta1"
+            android:layout_below="@id/trenutnaTezinaUnos"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTrenutniBmi"
+            android:layout_marginBottom="5dp"
+            android:text="BMI"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_below="@id/crta1"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:id="@+id/trenutniBmiUnos"
+            android:hint="BMI"
+            android:textSize="15dp"
+            android:background="@drawable/txt_ispis"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@id/txtTrenutniBmi"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta2"
+            android:layout_below="@id/trenutniBmiUnos"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/darker_gray"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spremi"
+            android:layout_below="@+id/crta2"
+            android:background="@drawable/allbutton"
+            android:text="Spremi"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

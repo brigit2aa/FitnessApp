@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="3dp"
+    android:layout_margin="16dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtVjezbaTrosi"
+            android:text="Broj kalorija koje vježba troši"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trosenjeKalorija"
+            android:text="Kalorije"
+            android:textSize="15dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@+id/txtVjezbaTrosi"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta1"
+            android:layout_below="@id/trosenjeKalorija"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtImeVjezbe"
+            android:text="Ime vježbe"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_below="@id/crta1"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imeVjezbe"
+            android:text="Vjezba"
+            android:textSize="15dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@id/txtImeVjezbe"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta2"
+            android:layout_below="@id/imeVjezbe"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtOpis"
+            android:text="Opis vježbe"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_below="@id/crta2"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/opis"
+            android:text="Opis"
+            android:textSize="15dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@id/txtOpis"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

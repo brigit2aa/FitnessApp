@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".IzbornikActivity">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        app:srcCompat="@drawable/izbornik"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dnevniUnos"
+        android:text="Dnevni unos podataka"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:background="@drawable/allbutton"
+        android:layout_below="@id/logo"/>
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/mojnapredak"
+        android:text="Moj napredak"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:background="@drawable/allbutton"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/dnevniUnos"/>
+
+    <Button
+        android:id="@+id/danas"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mojnapredak"
+        android:text="Danas"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/allbutton"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/vjezbe"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/danas"
+        android:text="Vježbe"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/allbutton"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/recepti"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vjezbe"
+        android:text="Recepti"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/allbutton"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/bmi"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recepti"
+        android:text="BMI"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/allbutton"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        />
+
+    <Button
+        android:id="@+id/odjava"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bmi"
+        android:text="Odjava"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/allbutton"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/white"
+        />
+</RelativeLayout>
