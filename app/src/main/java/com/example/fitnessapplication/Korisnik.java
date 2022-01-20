@@ -4,16 +4,20 @@ public class Korisnik {
     String imePrezime;
     String visina;
     String tezina;
+    String trenutnaTezina;
+    String bmi;
     String email;
     String password;
 
     public Korisnik() {
     }
 
-    public Korisnik(String imePrezime, String visina, String tezina, String email, String password) {
+    public Korisnik(String imePrezime, String visina, String tezina, String trenutnaTezina, String bmi, String email, String password) {
         this.imePrezime = imePrezime;
         this.visina = visina;
         this.tezina = tezina;
+        this.trenutnaTezina = trenutnaTezina;
+        this.bmi = bmi;
         this.email = email;
         this.password = password;
     }
@@ -42,6 +46,21 @@ public class Korisnik {
         this.tezina = tezina;
     }
 
+    public String getTrenutnaTezina() {
+        return trenutnaTezina;
+    }
+
+    public void setTrenutnaTezina(String trenutnaTezina) {
+        this.trenutnaTezina = trenutnaTezina;
+    }
+
+    public String getBmi() {
+        return bmi;
+    }
+
+    public void setBmi(String bmi) {
+        this.bmi = bmi;
+    }
 
     public String getEmail() {
         return email;

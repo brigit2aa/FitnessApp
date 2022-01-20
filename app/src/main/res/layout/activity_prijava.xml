@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="70dp"
+    android:padding="60dp"
     android:background="@color/white"
     tools:context=".PrijavaActivity">
 
@@ -23,7 +23,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/korisnickoime"
         android:hint="Adresa e-pošte"
-        android:layout_marginBottom="16dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/logo"
         />
 
@@ -33,6 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/korisnickoime"
         android:layout_marginBottom="16dp"
+        android:textSize="15dp"
         android:hint="Lozinka"
         android:password="true"/>
 

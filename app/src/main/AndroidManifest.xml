@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApplication">
         <activity
+            android:name=".DanasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MojNapredakActivity"
+            android:exported="false" />
+        <activity
             android:name=".DnevniUnosActivity"
             android:exported="false" />
         <activity

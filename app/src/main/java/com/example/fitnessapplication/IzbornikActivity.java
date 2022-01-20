@@ -45,11 +45,18 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
-
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.dnevniUnos:
+                startActivity(new Intent(this, DnevniUnosActivity.class));
+                break;
+            case R.id.mojnapredak:
+                startActivity(new Intent(this, MojNapredakActivity.class));
+                break;
+            case R.id.danas:
+                startActivity(new Intent(this, DanasActivity.class));
+                break;
             case R.id.vjezbe:
                 startActivity(new Intent(this, VjezbaActivity.class));
                 break;
@@ -76,3 +83,4 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
 }
 
 //https://www.youtube.com/watch?v=kPcWNy7eMLI tu mi je logout, no vidjela sam manipuliranje podatcima
+//https://www.youtube.com/watch?v=-plgl1EQ21Q s imenom

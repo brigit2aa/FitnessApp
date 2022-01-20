@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".DnevniUnosActivity">
+    tools:context=".MojNapredakActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:id="@+id/logo"
-            app:srcCompat="@drawable/unos"
+            app:srcCompat="@drawable/mojnapredak"
             android:layout_marginBottom="16dp"
             android:layout_centerHorizontal="true"
             />
@@ -33,24 +33,24 @@
             android:layout_marginBottom="5dp"
             android:layout_centerHorizontal="true"/>
 
-        <EditText
-            android:id="@+id/trenutnaTezinaUnos"
+        <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/txtTrenutnaTezina"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/txt_ispis"
             android:gravity="center"
-            android:hint="kg"
+            android:background="@drawable/txt_ispis"
+            android:id="@+id/trenutnaTezina"
+            android:text="kg"
+            android:textSize="15dp"
             android:textColor="@android:color/darker_gray"
-            android:textSize="15dp" />
+            android:layout_below="@+id/txtTrenutnaTezina"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:id="@+id/crta1"
-            android:layout_below="@id/trenutnaTezinaUnos"
+            android:layout_below="@id/trenutnaTezina"
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray"/>
 
@@ -65,36 +65,58 @@
             android:layout_below="@id/crta1"
             android:layout_centerHorizontal="true"/>
 
-        <EditText
-            android:id="@+id/trenutniBmiUnos"
+        <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_below="@id/txtTrenutniBmi"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/txt_ispis"
             android:gravity="center"
-            android:hint="BMI"
+            android:id="@+id/trenutniBmi"
+            android:text="BMI"
+            android:textSize="15dp"
+            android:background="@drawable/txt_ispis"
             android:textColor="@android:color/darker_gray"
-            android:textSize="15dp" />
+            android:layout_below="@id/txtTrenutniBmi"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:id="@+id/crta2"
-            android:layout_below="@id/trenutniBmiUnos"
+            android:layout_below="@id/trenutniBmi"
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray"/>
 
-        <Button
-            android:id="@+id/spremi"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/txtIzgubljeniKilogrami"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/crta2"
+            android:layout_below="@id/crta2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:text="Izgubljena(-) / dobivena težina(+)"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:background="@drawable/txt_ispis"
+            android:id="@+id/izgubljeniKilogrami"
+            android:text="kg"
+            android:textSize="15dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@+id/txtIzgubljeniKilogrami"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/allbutton"
-            android:text="Spremi"
-            android:textColor="@color/white" />
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta5"
+            android:layout_below="@id/izgubljeniKilogrami"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/darker_gray"/>
 
     </RelativeLayout>
 

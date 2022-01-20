@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:padding="70dp"
+    android:padding="60dp"
     android:background="@color/white"
     tools:context=".RegistracijaKorisnikaActivity">
 
@@ -22,7 +22,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/imePrezime"
         android:hint="Ime i prezime"
-        android:layout_marginBottom="16dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/logo"
         />
 
@@ -31,7 +32,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/visina"
         android:hint="Visina (cm)"
-        android:layout_marginBottom="16dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/imePrezime"
         />
 
@@ -40,16 +42,37 @@
         android:layout_height="wrap_content"
         android:id="@+id/tezina"
         android:hint="Težina (kg)"
-        android:layout_marginBottom="16dp"
+        android:textSize="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@id/visina"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bmi"
+        android:hint="BMI"
+        android:textSize="15dp"
+        android:layout_below="@id/tezina"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/izracunajBmi"
+        android:text="Izracunajte pocetni BMI"
+        android:layout_below="@id/bmi"
+        android:textSize="12dp"
+        android:textAlignment="viewEnd"
         />
 
     <EditText
         android:id="@+id/korisnickoime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tezina"
-        android:layout_marginBottom="16dp"
+        android:layout_below="@id/izracunajBmi"
+        android:layout_marginBottom="10dp"
+        android:textSize="15dp"
+
         android:hint="E-mail adresa" />
 
     <EditText
@@ -57,8 +80,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/korisnickoime"
-        android:layout_marginBottom="16dp"
-        android:hint="Nova lozinka" />
+        android:layout_marginBottom="10dp"
+        android:hint="Nova lozinka"
+        android:password="true"
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/registrirajse"

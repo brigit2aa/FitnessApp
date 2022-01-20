@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".DnevniUnosActivity">
+    tools:context=".DanasActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -18,7 +18,7 @@
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:id="@+id/logo"
-            app:srcCompat="@drawable/unos"
+            app:srcCompat="@drawable/danas"
             android:layout_marginBottom="16dp"
             android:layout_centerHorizontal="true"
             />
@@ -26,75 +26,75 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/logo"
-            android:id="@+id/txtTrenutnaTezina"
-            android:text="Trenutna težina"
+            android:id="@+id/txtTezina"
+            android:text="Težina"
             android:textSize="17dp"
             android:textStyle="bold"
             android:layout_marginBottom="5dp"
             android:layout_centerHorizontal="true"/>
 
-        <EditText
-            android:id="@+id/trenutnaTezinaUnos"
+        <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/txtTrenutnaTezina"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/txt_ispis"
             android:gravity="center"
-            android:hint="kg"
+            android:background="@drawable/txt_ispis"
+            android:id="@+id/tezina"
+            android:text="Težina"
+            android:textSize="15dp"
             android:textColor="@android:color/darker_gray"
-            android:textSize="15dp" />
+            android:layout_below="@+id/txtTezina"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:id="@+id/crta1"
-            android:layout_below="@id/trenutnaTezinaUnos"
+            android:layout_below="@id/tezina"
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtTrenutniBmi"
+            android:id="@+id/txtPotroseneKalorija"
             android:layout_marginBottom="5dp"
-            android:text="BMI"
+            android:text="Potrošene kalorije"
             android:textSize="17dp"
             android:textStyle="bold"
             android:layout_below="@id/crta1"
             android:layout_centerHorizontal="true"/>
 
-        <EditText
-            android:id="@+id/trenutniBmiUnos"
+        <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_below="@id/txtTrenutniBmi"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/txt_ispis"
             android:gravity="center"
-            android:hint="BMI"
+            android:id="@+id/potroseneKalorije"
+            android:text="Potrošene"
+            android:textSize="15dp"
+            android:background="@drawable/txt_ispis"
             android:textColor="@android:color/darker_gray"
-            android:textSize="15dp" />
+            android:layout_below="@id/txtPotroseneKalorija"
+            android:layout_marginBottom="15dp"
+            android:layout_centerHorizontal="true"/>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:id="@+id/crta2"
-            android:layout_below="@id/trenutniBmiUnos"
+            android:layout_below="@id/potroseneKalorije"
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray"/>
 
         <Button
-            android:id="@+id/spremi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/odustani"
             android:layout_below="@+id/crta2"
-            android:layout_marginBottom="15dp"
             android:background="@drawable/allbutton"
-            android:text="Spremi"
-            android:textColor="@color/white" />
+            android:text="Vježbe"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"/>
 
     </RelativeLayout>
 
