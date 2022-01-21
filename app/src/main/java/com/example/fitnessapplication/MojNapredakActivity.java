@@ -35,19 +35,18 @@ public class MojNapredakActivity extends AppCompatActivity {
         bmiTxt = (TextView) findViewById(R.id.trenutniBmi);
         izgubljeniKilogramiTxt = (TextView) findViewById(R.id.izgubljeniKilogrami);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Korisnik");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Napredak");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.child(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    Korisnik korisnik = dataSnapshot.getValue(Korisnik.class);
+                    Napredak napredak = dataSnapshot.getValue(Napredak.class);
 
-                    String trenutnaTezina = korisnik.getTrenutnaTezina();
-                    String bmi = korisnik.getBmi();
+                    String trenutnaTezina = napredak.getTrenutnaTezina();
+                    String bmi = napredak.getBmi();
 
-                    //mAuth.getCurrentUser().getUid();
                     trenutnaTezinaTxt.setText(trenutnaTezina);
                     bmiTxt.setText(bmi);
                 }
@@ -59,7 +58,7 @@ public class MojNapredakActivity extends AppCompatActivity {
             }
         });
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+       /* databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
@@ -89,6 +88,6 @@ public class MojNapredakActivity extends AppCompatActivity {
 
             }
 
-        });
+        });*/
     }
 }

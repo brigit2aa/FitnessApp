@@ -39,7 +39,7 @@ public class DnevniUnosActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference("Napredak");
         trenutnoKgTxt = (EditText) findViewById(R.id.trenutnaTezinaUnos);
         bmiTxt = (EditText) findViewById(R.id.trenutniBmiUnos);
         btnUpisi = (Button) findViewById(R.id.spremi);
@@ -49,15 +49,37 @@ public class DnevniUnosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String trenutnoKg = trenutnoKgTxt.getText().toString();
-                String bmi = bmiTxt.getText().toString();
-                unosZaDanas(trenutnoKg, bmi);
+                /*String trenutnoKg = trenutnoKgTxt.getText().toString();
+                String bmi = bmiTxt.getText().toString();*/
+                unosZaDanas(/*trenutnoKg, bmi*/);
             }
         });
     }
 
-    private void unosZaDanas(String trenutnoKg, String bmi) {
-        HashMap Korisnik = new HashMap();
+    private void unosZaDanas(/*String trenutnoKg, String bmi*/) {
+        String trenutnaTezina = trenutnoKgTxt.getText().toString();
+        String bmi = bmiTxt.getText().toString();
+
+        if(!trenutnaTezina.isEmpty() && !bmi.isEmpty()){
+            String id = databaseReference.push().getKey();
+
+            Napredak napredak = new Napredak(trenutnaTezina, bmi);
+
+
+            databaseReference.child(mAuth.getUid()).child(id).setValue(napredak).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                    trenutnoKgTxt.setText("");
+                    bmiTxt.setText("");
+                    Toast.makeText(DnevniUnosActivity.this, "Uspješno ste upisali podatke!", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else{
+            Toast.makeText(this, "Unesite podatke!", Toast.LENGTH_LONG).show();
+        }
+      /*  HashMap Korisnik = new HashMap();
         Korisnik.put("trenutnaTezina", trenutnoKg);
         Korisnik.put("bmi", bmi);
 
@@ -72,7 +94,7 @@ public class DnevniUnosActivity extends AppCompatActivity {
                     Toast.makeText(DnevniUnosActivity.this, "Uspješno ste upisali podatke", Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
     }
 }
 //https://www.geeksforgeeks.org/user-authentication-using-firebase-in-android/
