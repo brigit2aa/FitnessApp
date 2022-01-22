@@ -24,7 +24,6 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
     private EditText imePrezimeTxt;
     private EditText visinaTxt;
     private EditText tezinaTxt;
-    private EditText bmiTxt;
     private EditText korisnockoImelTxt;
     private EditText lozinkaTxt;
     private TextView izracunajBmi;
@@ -41,12 +40,8 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
         imePrezimeTxt = (EditText) findViewById(R.id.imePrezime);
         visinaTxt = (EditText) findViewById(R.id.visina);
         tezinaTxt = (EditText) findViewById(R.id.tezina);
-        bmiTxt = (EditText) findViewById(R.id.bmi);
         korisnockoImelTxt = (EditText) findViewById(R.id.korisnickoime);
         lozinkaTxt = (EditText) findViewById(R.id.lozinka);
-
-        izracunajBmi = (TextView) findViewById(R.id.izracunajBmi);
-        izracunajBmi.setOnClickListener(this);
         btnRegistracija = (Button) findViewById(R.id.registrirajse);
         btnRegistracija.setOnClickListener(this);
 
@@ -55,9 +50,6 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.izracunajBmi:
-                startActivity(new Intent(this, BMIActivity.class));
-                break;
             case R.id.registrirajse:
                 RegistracijaKorisnika();
                 break;
@@ -69,8 +61,6 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
         String imePrezime = imePrezimeTxt.getText().toString();
         String visina = visinaTxt.getText().toString();
         String tezina = tezinaTxt.getText().toString();
-        String trenutnaTezina = tezinaTxt.getText().toString();
-        String bmi = bmiTxt.getText().toString();
         String email = korisnockoImelTxt.getText().toString();
         String password = lozinkaTxt.getText().toString();
 
@@ -109,13 +99,13 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
             lozinkaTxt.requestFocus();
             return;
         }*/
-        if(!imePrezime.isEmpty() && !visina.isEmpty() && !tezina.isEmpty() && !bmi.isEmpty()&& !email.isEmpty() &&!password.isEmpty()) {
+        if(!imePrezime.isEmpty() && !visina.isEmpty() && !tezina.isEmpty() && !email.isEmpty() &&!password.isEmpty()) {
                mAuth.createUserWithEmailAndPassword(email, password)
                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                            @Override
                            public void onComplete(@NonNull Task<AuthResult> task) {
                                if (task.isSuccessful()) {
-                                   Korisnik korisnik = new Korisnik(imePrezime, visina, tezina, trenutnaTezina, bmi, email, password);
+                                   Korisnik korisnik = new Korisnik(imePrezime, visina, tezina, email, password);
 
                                    FirebaseDatabase.getInstance().getReference("Korisnik")
                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -127,7 +117,6 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
                                                imePrezimeTxt.setText("");
                                                visinaTxt.setText("");
                                                tezinaTxt.setText("");
-                                               bmiTxt.setText("");
                                                korisnockoImelTxt.setText("");
                                                lozinkaTxt.setText("");
                                                Toast.makeText(RegistracijaKorisnikaActivity.this, "Uspjesno ste se registrirali", Toast.LENGTH_SHORT).show();
@@ -142,11 +131,5 @@ public class RegistracijaKorisnikaActivity extends AppCompatActivity implements 
             Toast.makeText(RegistracijaKorisnikaActivity.this, "Unesite podatke!", Toast.LENGTH_LONG).show();
             return;
         }
-
-
-
-
     }
-
-
 }

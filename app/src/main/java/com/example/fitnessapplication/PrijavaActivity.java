@@ -68,8 +68,6 @@ public class PrijavaActivity extends AppCompatActivity implements View.OnClickLi
             return;
         }
 
-
-
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -86,6 +84,4 @@ public class PrijavaActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
-
-
 }

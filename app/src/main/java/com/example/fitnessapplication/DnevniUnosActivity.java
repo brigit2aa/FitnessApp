@@ -1,7 +1,6 @@
 package com.example.fitnessapplication;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,16 +11,9 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 public class DnevniUnosActivity extends AppCompatActivity {
 
@@ -49,14 +41,12 @@ public class DnevniUnosActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                /*String trenutnoKg = trenutnoKgTxt.getText().toString();
-                String bmi = bmiTxt.getText().toString();*/
-                unosZaDanas(/*trenutnoKg, bmi*/);
+                unosZaDanas();
             }
         });
     }
 
-    private void unosZaDanas(/*String trenutnoKg, String bmi*/) {
+    private void unosZaDanas() {
         String trenutnaTezina = trenutnoKgTxt.getText().toString();
         String bmi = bmiTxt.getText().toString();
 
@@ -64,7 +54,6 @@ public class DnevniUnosActivity extends AppCompatActivity {
             String id = databaseReference.push().getKey();
 
             Napredak napredak = new Napredak(trenutnaTezina, bmi);
-
 
             databaseReference.child(mAuth.getUid()).child(id).setValue(napredak).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
@@ -79,24 +68,5 @@ public class DnevniUnosActivity extends AppCompatActivity {
         else{
             Toast.makeText(this, "Unesite podatke!", Toast.LENGTH_LONG).show();
         }
-      /*  HashMap Korisnik = new HashMap();
-        Korisnik.put("trenutnaTezina", trenutnoKg);
-        Korisnik.put("bmi", bmi);
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("Korisnik");
-        databaseReference.child(mAuth.getUid()).updateChildren(Korisnik).addOnCompleteListener(new OnCompleteListener() {
-            @Override
-            public void onComplete(@NonNull Task task) {
-
-                if(task.isSuccessful()){
-                    trenutnoKgTxt.setText("");
-                    bmiTxt.setText("");
-                    Toast.makeText(DnevniUnosActivity.this, "Uspješno ste upisali podatke", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
     }
 }
-//https://www.geeksforgeeks.org/user-authentication-using-firebase-in-android/
-//https://stackoverflow.com/questions/58594142/how-to-write-code-that-called-your-database-child-for-firebase
-//https://stackoverflow.com/questions/61186173/firebase-realtime-databse-updating-multiple-tables

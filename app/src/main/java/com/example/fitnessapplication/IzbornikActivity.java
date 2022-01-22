@@ -81,6 +81,3 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
         finish();
     }
 }
-
-//https://www.youtube.com/watch?v=kPcWNy7eMLI tu mi je logout, no vidjela sam manipuliranje podatcima
-//https://www.youtube.com/watch?v=-plgl1EQ21Q s imenom

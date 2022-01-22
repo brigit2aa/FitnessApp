@@ -49,6 +49,14 @@ public class MojNapredakActivity extends AppCompatActivity {
 
                     trenutnaTezinaTxt.setText(trenutnaTezina);
                     bmiTxt.setText(bmi);
+
+
+                    String trenutnaTezina2 = String.valueOf(dataSnapshot.child("trenutnaTezina").getValue());
+                    int trenutnoKg = Integer.parseInt(trenutnaTezina2);
+
+                    int rezultatTrenutnogVaganja = trenutnoKg;
+                    vaganje(rezultatTrenutnogVaganja);
+
                 }
             }
 
@@ -58,29 +66,22 @@ public class MojNapredakActivity extends AppCompatActivity {
             }
         });
 
-       /* databaseReference.addValueEventListener(new ValueEventListener() {
+    }
+
+    private void vaganje(int rezultatTrenutnogVaganja) {
+        DatabaseReference databaseReference2 = FirebaseDatabase.getInstance().getReference("Korisnik");
+        databaseReference2.child(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()){
-                    Map<String, Object> map1 = (Map<String, Object>) dataSnapshot1.getValue();
-                    Object pocetnoKg = map1.get("tezina");
-                    int pocetno = Integer.parseInt(String.valueOf(pocetnoKg));
+                String pocetnaTezina = String.valueOf(dataSnapshot.child("tezina").getValue());
+                int pocetnoKg = Integer.parseInt(pocetnaTezina);
+                int izgubljeneKg = pocetnoKg - rezultatTrenutnogVaganja;
 
-                    Map<String, Object> map2 = (Map<String, Object>) dataSnapshot1.getValue();
-                    Object zavrsnoKg = map2.get("trenutnaTezina");
-                    int zavrsno = Integer.parseInt(String.valueOf(zavrsnoKg));
-
-                    int rezultat = pocetno-zavrsno;
-
-                    if(pocetno > zavrsno){
-                        izgubljeniKilogramiTxt.setText(String.valueOf("- " + rezultat + " kg"));
-                    }
-                    else {
-                        izgubljeniKilogramiTxt.setText(String.valueOf("+ " + rezultat  + " kg"));
-                    }
+                izgubljeniKilogramiTxt.setText(String.valueOf(izgubljeneKg));
 
 
-                }
+
+
 
             }
             @Override
@@ -88,6 +89,6 @@ public class MojNapredakActivity extends AppCompatActivity {
 
             }
 
-        });*/
+        });
     }
 }
