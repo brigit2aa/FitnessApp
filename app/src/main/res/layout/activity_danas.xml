@@ -87,14 +87,14 @@
             android:background="@android:color/darker_gray"/>
 
         <Button
+            android:id="@+id/vjezbeDanas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/odustani"
             android:layout_below="@+id/crta2"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/allbutton"
             android:text="Vježbe"
-            android:layout_marginBottom="15dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 

@@ -3,7 +3,10 @@ package com.example.fitnessapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,11 +18,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
-public class MojNapredakActivity extends AppCompatActivity {
+public class MojNapredakActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView trenutnaTezinaTxt;
     private TextView bmiTxt;
     private TextView izgubljeniKilogramiTxt;
+    private Button btnIzgubljeneKgPoDatumima;
     DatabaseReference databaseReference;
     private FirebaseAuth mAuth;
 
@@ -30,10 +34,11 @@ public class MojNapredakActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-
         trenutnaTezinaTxt = (TextView) findViewById(R.id.trenutnaTezina);
         bmiTxt = (TextView) findViewById(R.id.trenutniBmi);
         izgubljeniKilogramiTxt = (TextView) findViewById(R.id.izgubljeniKilogrami);
+        btnIzgubljeneKgPoDatumima = (Button) findViewById(R.id.pogledaj);
+        btnIzgubljeneKgPoDatumima.setOnClickListener(this);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Napredak");
 
@@ -79,10 +84,6 @@ public class MojNapredakActivity extends AppCompatActivity {
 
                 izgubljeniKilogramiTxt.setText(String.valueOf(izgubljeneKg));
 
-
-
-
-
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -90,5 +91,16 @@ public class MojNapredakActivity extends AppCompatActivity {
             }
 
         });
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.pogledaj:
+                startActivity(new Intent(this,NapredakPoDatumimaActivity.class));
+                break;
+        }
     }
 }

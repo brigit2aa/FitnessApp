@@ -1,17 +1,11 @@
 package com.example.fitnessapplication;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -22,59 +16,44 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class DanasActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private TextView trenutnaTezinaTxt;
-    private Button btnVjezbeDanas;
+public class NapredakPoDatumimaActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
-    DatabaseReference databaseReference1;
-    RecyclerView recyclerView;
-    private LayoutInflater layoutInflater;
-    VjezbeDanasAdapter vjezbeDanasAdapter;
-    ArrayList<Vjezba> vjezbaArrayList;
     private FirebaseAuth mAuth;
+    RecyclerView recyclerView;
+    NapredakPoDatumimaAdapter napredakPoDatumimaAdapter;
+    ArrayList<Napredak> napredakArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_danas);
+        setContentView(R.layout.activity_napredak_po_datumima);
+
+        recyclerView = findViewById(R.id.popisNapredaka);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Napredak");
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        napredakArrayList = new ArrayList<>();
+        napredakPoDatumimaAdapter = new NapredakPoDatumimaAdapter(this, napredakArrayList);
+        recyclerView.setAdapter(napredakPoDatumimaAdapter);
 
         mAuth = FirebaseAuth.getInstance();
-
-        trenutnaTezinaTxt = (TextView) findViewById(R.id.tezina);
-        btnVjezbeDanas = (Button) findViewById(R.id.vjezbeDanas);
-
-
-        databaseReference = FirebaseDatabase.getInstance().getReference("Napredak");
-
         databaseReference.child(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+
                     Napredak napredak = dataSnapshot.getValue(Napredak.class);
-
-                    String trenutnaTezina = napredak.getTrenutnaTezina();
-
-                    trenutnaTezinaTxt.setText(trenutnaTezina);
+                    napredakArrayList.add(napredak);
                 }
+                napredakPoDatumimaAdapter.notifyDataSetChanged();
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-
-        btnVjezbeDanas.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.vjezbeDanas:
-                startActivity(new Intent(this,VjezbePoImenuActivity.class));
-                break;
-        }
     }
 }

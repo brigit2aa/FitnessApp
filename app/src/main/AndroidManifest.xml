@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessApplication">
         <activity
+            android:name=".VjezbePoImenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NapredakPoDatumimaActivity"
+            android:exported="false" />
+        <activity
             android:name=".DanasActivity"
             android:exported="false" />
         <activity

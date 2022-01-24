@@ -117,6 +117,15 @@
             android:layout_below="@id/izgubljeniKilogrami"
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pogledaj"
+            android:layout_below="@+id/crta5"
+            android:background="@drawable/allbutton"
+            android:text="Težine po datumima"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/white"/>
 
     </RelativeLayout>
 

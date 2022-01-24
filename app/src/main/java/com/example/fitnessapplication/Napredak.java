@@ -1,15 +1,25 @@
 package com.example.fitnessapplication;
 
 public class Napredak {
+    String datum;
     String trenutnaTezina;
     String bmi;
 
     public Napredak() {
     }
 
-    public Napredak(String trenutnaTezina, String bmi) {
+    public Napredak(String datum, String trenutnaTezina, String bmi) {
+        this.datum = datum;
         this.trenutnaTezina = trenutnaTezina;
         this.bmi = bmi;
+    }
+
+    public String getDatum() {
+        return datum;
+    }
+
+    public void setDatum(String datum) {
+        this.datum = datum;
     }
 
     public String getTrenutnaTezina() {

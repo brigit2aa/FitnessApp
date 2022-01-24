@@ -22,10 +22,42 @@
             android:layout_marginBottom="16dp"
             android:layout_centerHorizontal="true"
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/logo"
+            android:id="@+id/txtTrenutniDatum"
+            android:text="Današnji datum"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:layout_centerHorizontal="true"/>
+
+        <EditText
+            android:id="@+id/trenutniDatumUnos"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/txtTrenutniDatum"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/txt_ispis"
+            android:gravity="center"
+            android:hint="dd.mm.yy"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta1"
+            android:layout_below="@id/trenutniDatumUnos"
+            android:layout_marginBottom="15dp"
+            android:background="@android:color/darker_gray"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/crta1"
             android:id="@+id/txtTrenutnaTezina"
             android:text="Trenutna težina"
             android:textSize="17dp"
@@ -49,7 +81,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:id="@+id/crta1"
+            android:id="@+id/crta3"
             android:layout_below="@id/trenutnaTezinaUnos"
             android:layout_marginBottom="15dp"
             android:background="@android:color/darker_gray"/>
@@ -62,7 +94,7 @@
             android:text="BMI"
             android:textSize="17dp"
             android:textStyle="bold"
-            android:layout_below="@id/crta1"
+            android:layout_below="@id/crta3"
             android:layout_centerHorizontal="true"/>
 
         <EditText
