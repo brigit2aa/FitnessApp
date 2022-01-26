@@ -16,24 +16,57 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/imeVjezbeLayout">
 
-        <LinearLayout
+        <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal">
+            android:id="@+id/imeVjezbeDanasTxt"
+            android:text="Ime vježbe"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
 
-            <TextView
-                android:id="@+id/imeVjezbeDanas"
-                android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imeVjezbeDanas"
+            android:text="Ime vježbe"
+            android:textSize="15dp"
+            android:textColor="@android:color/darker_gray"
+            android:layout_below="@+id/imeVjezbeDanasTxt"
+            android:layout_marginBottom="10dp"
+            android:layout_centerHorizontal="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta1"
+            android:layout_below="@id/imeVjezbeDanas"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"/>
+
+            <Button
+                android:id="@+id/odvjezbano"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ime vježbe"
-                android:textSize="19dp"
-                android:textColor="@android:color/darker_gray"
-                android:textStyle="bold"/>
+                android:layout_below="@id/crta1"
+                android:background="@drawable/allbutton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:text="Odvježbano"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
 
-        </LinearLayout>
+        </RelativeLayout>
+
 
     </LinearLayout>
 

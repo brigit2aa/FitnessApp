@@ -24,5 +24,4 @@
         android:layout_below="@id/logo"
         android:id="@+id/popisVjezbiPoImenu"/>
 
-
 </RelativeLayout>

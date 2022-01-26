@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class DanasActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView trenutnaTezinaTxt;
+    private TextView trenutnaTezinaTxt, kalorijeTxt;
     private Button btnVjezbeDanas;
     DatabaseReference databaseReference;
     DatabaseReference databaseReference1;
@@ -42,6 +42,7 @@ public class DanasActivity extends AppCompatActivity implements View.OnClickList
         mAuth = FirebaseAuth.getInstance();
 
         trenutnaTezinaTxt = (TextView) findViewById(R.id.tezina);
+        kalorijeTxt = (TextView)  findViewById(R.id.potroseneKalorije);
         btnVjezbeDanas = (Button) findViewById(R.id.vjezbeDanas);
 
 
@@ -53,10 +54,10 @@ public class DanasActivity extends AppCompatActivity implements View.OnClickList
 
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
                     Napredak napredak = dataSnapshot.getValue(Napredak.class);
-
                     String trenutnaTezina = napredak.getTrenutnaTezina();
 
                     trenutnaTezinaTxt.setText(trenutnaTezina);
+
                 }
             }
 
@@ -66,6 +67,27 @@ public class DanasActivity extends AppCompatActivity implements View.OnClickList
             }
         });
 
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("OdvjezbaneVjezbe");
+
+        databaseReference.child(mAuth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+
+                    Vjezba vjezba = dataSnapshot.getValue(Vjezba.class);
+                    String trenutneKalorije = vjezba.getKalorije();
+
+                    kalorijeTxt.setText(trenutneKalorije);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         btnVjezbeDanas.setOnClickListener(this);
     }
 

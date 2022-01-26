@@ -91,8 +91,6 @@ public class MojNapredakActivity extends AppCompatActivity implements View.OnCli
             }
 
         });
-
-
     }
 
     @Override

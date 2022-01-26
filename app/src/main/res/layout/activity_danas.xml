@@ -66,17 +66,17 @@
             android:layout_centerHorizontal="true"/>
 
         <TextView
+            android:id="@+id/potroseneKalorije"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:gravity="center"
-            android:id="@+id/potroseneKalorije"
-            android:text="Potrošene"
-            android:textSize="15dp"
-            android:background="@drawable/txt_ispis"
-            android:textColor="@android:color/darker_gray"
             android:layout_below="@id/txtPotroseneKalorija"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
-            android:layout_centerHorizontal="true"/>
+            android:background="@drawable/txt_ispis"
+            android:gravity="center"
+            android:text="Potrošene"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15dp" />
 
         <View
             android:layout_width="match_parent"

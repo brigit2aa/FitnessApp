@@ -22,30 +22,11 @@
             android:layout_centerHorizontal="true"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtBrKalorija"
-            android:text="Broj kalorija koje vježba troši"
-            android:textSize="17dp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/logo"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/brojKalorija"
-            android:text="dorucak"
-            android:textSize="15dp"
-            android:textColor="@android:color/darker_gray"
-            android:layout_below="@id/txtBrKalorija"
-            android:layout_centerHorizontal="true"/>
-
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:id="@+id/crta1"
-            android:layout_below="@id/brojKalorija"
+            android:layout_below="@id/logo"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:background="@android:color/darker_gray"/>
@@ -79,6 +60,35 @@
             android:layout_marginTop="5dp"
             android:background="@android:color/darker_gray"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtBrKalorija"
+            android:text="Broj kalorija koje vježba troši"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_below="@id/crta2"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/brKalorija"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtBrKalorija"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="Broj kalorija"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/crta3"
+            android:layout_below="@id/brKalorija"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/darker_gray"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,7 +98,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:textColor="@color/white"
-            android:layout_below="@id/crta2"/>
+            android:layout_below="@id/crta3"/>
     </RelativeLayout>
 
 </ScrollView>
