@@ -70,7 +70,6 @@ public class MojNapredakActivity extends AppCompatActivity implements View.OnCli
 
             }
         });
-
     }
 
     private void vaganje(int rezultatTrenutnogVaganja) {
@@ -89,7 +88,6 @@ public class MojNapredakActivity extends AppCompatActivity implements View.OnCli
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
         });
     }
 

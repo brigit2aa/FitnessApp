@@ -1,5 +1,6 @@
 package com.example.fitnessapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,8 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.DateFormat;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BMIActivity extends AppCompatActivity {
 
@@ -17,11 +28,17 @@ public class BMIActivity extends AppCompatActivity {
     TextView odgovorTxt;
     Button izracunaj;
     TextView btnStanjaBmi;
+    private FirebaseAuth mAuth;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmiactivity);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Napredak");
 
         visinaTxt = (EditText) findViewById(R.id.vasaVisina);
         tezinaTxt = (EditText) findViewById(R.id.vasaTezina);
@@ -33,6 +50,7 @@ public class BMIActivity extends AppCompatActivity {
         izracunaj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String visinaString = visinaTxt.getText().toString();
                 double visina = Double.parseDouble(visinaString);
                 double visinaD = visina/100;
@@ -42,8 +60,8 @@ public class BMIActivity extends AppCompatActivity {
                 double bmi = tezina/(visinaD*visinaD);
 
                 DecimalFormat decimalFormat = new DecimalFormat("#.#");
-                double BMI_trimmed = Double.parseDouble(decimalFormat.format(bmi));
-                bmiTxt.setText(Double.toString(BMI_trimmed));
+                double bmi_izracun = Double.parseDouble(decimalFormat.format(bmi));
+                bmiTxt.setText(Double.toString(bmi_izracun));
 
                 String odgovor;
                 String bmiKategorizacija;
@@ -91,7 +109,34 @@ public class BMIActivity extends AppCompatActivity {
                 }
                 odgovorTxt.setText(odgovor);
                 btnStanjaBmi.setText(bmiKategorizacija);
+
+                unosZaDanas();
             }
         });
+    }
+
+    private void unosZaDanas() {
+        DateFormat format = new SimpleDateFormat("dd.MM.yyyy.");
+        String datum =  format.format(new Date());
+        String trenutnaTezina = tezinaTxt.getText().toString();
+        String visina = visinaTxt.getText().toString();
+        String bmi = bmiTxt.getText().toString();
+
+        if(!trenutnaTezina.isEmpty() && !visina.isEmpty()){
+            String id = databaseReference.push().getKey();
+
+            Napredak napredak = new Napredak(datum, trenutnaTezina, visina, bmi);
+
+            databaseReference.child(mAuth.getUid()).child(id).setValue(napredak).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                    Toast.makeText(BMIActivity.this, "Uspješno ste upisali podatke!", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+        else{
+            Toast.makeText(this, "Unesite podatke!", Toast.LENGTH_LONG).show();
+        }
     }
 }

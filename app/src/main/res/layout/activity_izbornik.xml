@@ -18,22 +18,13 @@
     <Button
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:id="@+id/dnevniUnos"
-        android:text="Dnevni unos podataka"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/white"
-        android:background="@drawable/allbutton"
-        android:layout_below="@id/logo"/>
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
         android:id="@+id/mojnapredak"
         android:text="Moj napredak"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
         android:background="@drawable/allbutton"
         android:layout_marginTop="16dp"
-        android:layout_below="@id/dnevniUnos"/>
+        android:layout_below="@id/logo"/>
 
     <Button
         android:id="@+id/danas"

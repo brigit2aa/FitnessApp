@@ -22,9 +22,6 @@
             android:name=".MojNapredakActivity"
             android:exported="false" />
         <activity
-            android:name=".DnevniUnosActivity"
-            android:exported="false" />
-        <activity
             android:name=".VjezbaActivity"
             android:exported="false" />
         <activity

@@ -16,7 +16,6 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
     private Button btnVjezbe;
     private Button btnRecept;
     private Button btnBmi;
-    private Button btnDnevniUnos;
     private Button btnOdjava;
 
     private FirebaseAuth mAuth;
@@ -26,8 +25,6 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_izbornik);
 
-        btnDnevniUnos = (Button) findViewById(R.id.dnevniUnos);
-        btnDnevniUnos.setOnClickListener(this);
         btnMojNapredak = (Button) findViewById(R.id.mojnapredak);
         btnMojNapredak.setOnClickListener(this);
         btnDanas = (Button) findViewById(R.id.danas);
@@ -48,9 +45,6 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.dnevniUnos:
-                startActivity(new Intent(this, DnevniUnosActivity.class));
-                break;
             case R.id.mojnapredak:
                 startActivity(new Intent(this, MojNapredakActivity.class));
                 break;
@@ -70,7 +64,6 @@ public class IzbornikActivity extends AppCompatActivity implements View.OnClickL
                 mAuth.signOut();
                 odjaviKorisnika();
                 break;
-
         }
     }
 
