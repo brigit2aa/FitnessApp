@@ -1,1 +1,1 @@
-# MobilneAplikacijeProjekt
+# Fitness App
