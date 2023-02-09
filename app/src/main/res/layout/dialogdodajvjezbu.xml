@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardElevation="2dp"
+    android:layout_margin="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        android:layout_margin="25dp">
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:id="@+id/logo"
+            app:srcCompat="@drawable/vjezbe"
+            android:layout_marginBottom="5dp"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/trosenjeKalorija"
+            android:hint="Broj kalorija"
+            android:layout_below="@id/logo"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imeVjezbe"
+            android:hint="Ime vježbe"
+            android:layout_marginBottom="16dp"
+            android:layout_below="@id/trosenjeKalorija"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/opis"
+            android:hint="Opis vježbe"
+            android:layout_marginBottom="25dp"
+            android:layout_below="@id/imeVjezbe"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dodaj"
+            android:layout_below="@+id/opis"
+            android:background="@drawable/allbutton"
+            android:text="Dodaj novu vježbu"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/odustani"
+            android:layout_below="@+id/dodaj"
+            android:background="@drawable/allbutton"
+            android:text="Odustani"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/white"/>
+
+    </RelativeLayout>
+
+</ScrollView>

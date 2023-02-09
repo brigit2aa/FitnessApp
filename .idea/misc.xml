@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_bmiactivity.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_danas.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_dnevni_unos.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_izbornik.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_moj_napredak.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_napredak_po_datumima.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_pocetni.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_prijava.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_recept.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_registracijakorisnika.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_vjezba.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_vjezbe_po_imenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/dialogdodajvjezbu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/dialogprocitajrecept.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/dialogvjezbepoimenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/dialopopisjvjezbi.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/item_napredakpodatumima.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/item_recept.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/item_vjezba.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/item_vjezbedanaspoimenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/vjezbedanasudialogupoimenu.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
